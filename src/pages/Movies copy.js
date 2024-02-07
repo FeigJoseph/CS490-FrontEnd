@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+/*import React, { useState, useEffect, useMemo } from "react";
 import {
   BorderedCardDiv,
   TopBorderedCardDiv,
@@ -7,11 +7,15 @@ import {
 
 const Movies = () => {
   const [movies, setMovies] = useState({ films: [] });
+
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [searchActor, setSearchActor] = useState("");
+
   const [rentMovie, setRentMovie] = useState("");
   const [movieCost, setMovieCost] = useState(0.0);
   const [genres, setGenres] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("");
+
   const [showForm, setShowForm] = useState(false);
   const [showRented, setShowRented] = useState(false);
   const [formValid, setFormValid] = useState(false);
@@ -52,7 +56,10 @@ const Movies = () => {
     (film) =>
       film[1].toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedGenre === "" ||
-        film[10].toLowerCase() === selectedGenre.toLowerCase())
+        film[10].toLowerCase() === selectedGenre.toLowerCase()) &&
+      (searchActor === "" ||
+        (film[11] &&
+          film[11].toLowerCase().includes(searchActor.toLowerCase())))
   );
 
   const handleRentClick = (film) => {
@@ -239,52 +246,55 @@ const Movies = () => {
   }, [currentPage, filteredMovies]);
 
   const formValidation = () => {
-    if (firstName == "") {
+    if (firstName === "") {
       setFormError("First Name is blank");
-    } else if (lastName == "") {
+    } else if (lastName === "") {
       setFormError("Last Name is blank");
-    } else if (email == "") {
+    } else if (email === "") {
       setFormError("Email is blank");
-    } else if (phoneNumber == "") {
+    } else if (phoneNumber === "") {
       setFormError("Phone Number is blank");
-    } else if (phoneNumber.length != 10) {
+    } else if (phoneNumber !== null && phoneNumber.length !== 10) {
       setFormError("Phone Number must be 10 numbers");
-    } else if (streetAddress == "") {
+    } else if (streetAddress === "") {
       setFormError("Street Address is blank");
-    } else if (city == "") {
+    } else if (city === "") {
       setFormError("City is blank");
-    } else if (state == "") {
+    } else if (state === "") {
       setFormError("State is blank");
-    } else if (country == "") {
+    } else if (country === "") {
       setFormError("Country is blank");
-    } else if (postalCode == "") {
+    } else if (postalCode === "") {
       setFormError("Postal Code is blank");
-    } else if (creditCardNumber == "") {
+    } else if (creditCardNumber === "") {
       setFormError("Credit Card Number is blank");
-    } else if (creditCardNumber.length != 16) {
+    } else if (creditCardNumber !== null && creditCardNumber.length !== 16) {
       setFormError("Credit Card Number must be 16 numbers");
-    } else if (secCode == "") {
+    } else if (secCode === "") {
       setFormError("Sec Code is blank");
-    } else if (secCode.length != 3) {
+    } else if (secCode !== null && secCode.length !== 3) {
       setFormError("Sec Code must be 3 numbers");
     } else {
       setFormError("");
     }
     setFormValid(
-      firstName != "" &&
-        lastName != "" &&
-        email != "" &&
-        phoneNumber != "" &&
-        phoneNumber.length == 10 &&
-        streetAddress != "" &&
-        city != "" &&
-        state != "" &&
-        country != "" &&
-        postalCode != "" &&
-        creditCardNumber != "" &&
-        creditCardNumber.length == 16 &&
-        secCode != "" &&
-        secCode.length == 3
+      firstName !== "" &&
+        lastName !== "" &&
+        email !== "" &&
+        phoneNumber !== "" &&
+        phoneNumber !== null &&
+        phoneNumber.length === 10 &&
+        streetAddress !== "" &&
+        city !== "" &&
+        state !== "" &&
+        country !== "" &&
+        postalCode !== "" &&
+        creditCardNumber !== "" &&
+        creditCardNumber !== null &&
+        creditCardNumber.length === 16 &&
+        secCode !== "" &&
+        secCode !== null &&
+        secCode.length === 3
     );
   };
 
@@ -295,7 +305,7 @@ const Movies = () => {
           <h1>Your movie has been rented!</h1>
         </div>
       )}
-      {formError != "" && (
+      {formError !== "" && (
         <div>
           <p style={{ color: "red" }}>{formError}</p>
         </div>
@@ -339,6 +349,14 @@ const Movies = () => {
               </option>
             ))}
           </select>
+
+          <label>Search Actor: </label>
+          <input
+            type="text"
+            placeholder="Actor"
+            value={searchActor}
+            onChange={(e) => setSearchActor(e.target.value)}
+          />
         </div>
 
         <div
@@ -451,3 +469,4 @@ const Movies = () => {
 };
 
 export default Movies;
+*/
