@@ -1,0 +1,53 @@
+.table-style {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-style th {
+    padding: 8px;
+    border: 1px solid #dddddd;
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .table-style td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+  }
+  
+  .table-style button {
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .info-button {
+    background-color: #57B94E;
+  }
+  
+  .edit-button {
+    background-color: #28B463;
+  }
+
+  .rentalHistory-button {
+    background-color: #28B463;
+  }
+  
+  .delete-button {
+    background-color: #00897B;
+  }
+
+  .info-dialog {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    max-width: 80%;
+  }
